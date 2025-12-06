@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=3 uid="uid://btu82upapvhco"]
+
+[ext_resource type="Script" uid="uid://b876nac6ax0ro" path="res://script/player.gd" id="1_hjaqi"]
+[ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://sprites/characters/happy_boo/happy_boo.tscn" id="1_xo3ru"]
+[ext_resource type="PackedScene" uid="uid://ci2rx8bmif071" path="res://scene/gun.tscn" id="3_fvtld"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hjaqi"]
+radius = 29.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fvtld"]
+radius = 36.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ct4mp"]
+bg_color = Color(0.008395317, 0.012617188, 0.0018550705, 0.5803922)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s4jxa"]
+bg_color = Color(0.9098039, 0, 0.35686275, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="player" type="CharacterBody2D"]
+platform_floor_layers = 4294967040
+script = ExtResource("1_hjaqi")
+
+[node name="HappyBoo" parent="." instance=ExtResource("1_xo3ru")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -8)
+rotation = -1.5707964
+shape = SubResource("CircleShape2D_hjaqi")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="gun" parent="." instance=ExtResource("3_fvtld")]
+position = Vector2(-2, -45)
+
+[node name="HurtBox" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+modulate = Color(1, 0.2627451, 0.28627452, 1)
+position = Vector2(0, -8)
+rotation = 2.3244703
+shape = SubResource("CircleShape2D_fvtld")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -130.0
+offset_top = -135.0
+offset_right = 124.0
+offset_bottom = -108.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ct4mp")
+theme_override_styles/fill = SubResource("StyleBoxFlat_s4jxa")
+value = 100.0
+show_percentage = false

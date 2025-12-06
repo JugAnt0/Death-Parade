@@ -1,0 +1,384 @@
+[gd_scene load_steps=6 format=3 uid="uid://tq7yxtlw4leg"]
+
+[ext_resource type="PackedScene" uid="uid://btu82upapvhco" path="res://scene/player.tscn" id="1_dbls1"]
+[ext_resource type="Script" uid="uid://cmx2fwvi5kcl3" path="res://script/game.gd" id="1_xwcet"]
+[ext_resource type="PackedScene" uid="uid://uwsas4r7cvqv" path="res://scene/tree.tscn" id="2_33cqm"]
+
+[sub_resource type="Curve2D" id="Curve2D_p1ry8"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1349, -239, 0, 0, 0, 0, 1380, 786, 0, 0, 0, 0, -219, 783, 0, 0, 0, 0, -198, -205, 0, 0, 0, 0, 1349, -239)
+}
+point_count = 5
+
+[sub_resource type="FontFile" id="FontFile_33cqm"]
+cache/0/101/0/ascent = 0.0
+cache/0/101/0/descent = 0.0
+cache/0/101/0/underline_position = 0.0
+cache/0/101/0/underline_thickness = 0.0
+cache/0/101/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[node name="Game" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_xwcet")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = -94.0
+offset_top = -16.0
+offset_right = 1220.0
+offset_bottom = 658.0
+
+[node name="player" parent="." instance=ExtResource("1_dbls1")]
+position = Vector2(570, 330)
+
+[node name="Path2D" type="Path2D" parent="player"]
+position = Vector2(-570, -330)
+curve = SubResource("Curve2D_p1ry8")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="player/Path2D"]
+unique_name_in_owner = true
+position = Vector2(1349, -239)
+rotation = 1.5405617
+
+[node name="Tree" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(130, 141)
+
+[node name="Tree2" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(864, 397)
+
+[node name="Tree3" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(918, 454)
+
+[node name="Tree4" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(819, 462)
+
+[node name="Tree5" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(376, 343)
+
+[node name="Tree6" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(244, 524)
+
+[node name="Tree7" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(1068, 166)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="GameOver" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="GameOver"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5019608)
+
+[node name="Label" type="Label" parent="GameOver/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = -11.5
+offset_right = 43.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontFile_33cqm")
+theme_override_font_sizes/font_size = 101
+text = "Game Over"
+
+[node name="Tree8" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(-277, 601)
+
+[node name="Tree9" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(-218, 629)
+
+[node name="Tree10" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(-353, 636)
+
+[node name="Tree11" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(-322, 708)
+
+[node name="Tree12" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(-232, 701)
+
+[node name="Tree13" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(752, 881)
+
+[node name="Tree14" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(179, 1022)
+
+[node name="Tree15" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(662, -65)
+
+[node name="Tree16" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(1446, 867)
+
+[node name="Tree17" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(-629, 173)
+
+[node name="Tree18" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(-387, 1130)
+
+[node name="Tree19" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(1567, 369)
+
+[node name="Tree20" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(1083, -443)
+
+[node name="Tree21" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(277, -488)
+
+[node name="Tree22" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(205, -476)
+
+[node name="Tree23" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(244, -438)
+
+[node name="Tree24" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(400, 1197)
+
+[node name="Tree25" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(1050, 1275)
+
+[node name="Tree26" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(-1241, 1197)
+
+[node name="Tree27" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(-1914, 597)
+
+[node name="Tree28" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(-634, -676)
+
+[node name="Tree29" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(-1603, -246)
+
+[node name="Tree30" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(-1433, 242)
+
+[node name="Tree31" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(-1374, 294)
+
+[node name="Tree32" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(-1322, 346)
+
+[node name="Tree33" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(-271, 1796)
+
+[node name="Tree34" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(765, -927)
+
+[node name="Tree35" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(-871, -180)
+
+[node name="Tree36" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(713, 1663)
+
+[node name="Tree37" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(1653, -283)
+
+[node name="Tree38" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(1971, -831)
+
+[node name="Tree39" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(2045, -779)
+
+[node name="Tree40" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(1919, -757)
+
+[node name="Tree41" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(2119, -698)
+
+[node name="Tree42" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(1845, -690)
+
+[node name="Tree43" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(1986, -528)
+
+[node name="Tree44" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(1927, 1226)
+
+[node name="Tree45" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(2001, 1300)
+
+[node name="Tree46" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(2600, 442)
+
+[node name="Tree47" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(2134, 693)
+
+[node name="Tree48" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(-1885, 1707)
+
+[node name="Tree49" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(-2721, 1219)
+
+[node name="Tree50" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(-2004, 1093)
+
+[node name="Tree51" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(-1967, 1123)
+
+[node name="Tree52" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(-2485, -631)
+
+[node name="Tree53" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(-2470, 57)
+
+[node name="Tree54" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(1652, 1841)
+
+[node name="Tree55" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(2814, 960)
+
+[node name="Tree56" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(2377, -9)
+
+[node name="Tree57" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(1963, 42)
+
+[node name="Tree58" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(-864, 745)
+
+[node name="Tree59" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(-1093, 1685)
+
+[node name="Tree60" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(-2581, 486)
+
+[node name="Tree61" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(-2507, 531)
+
+[node name="Tree62" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(3154, 1966)
+
+[node name="Tree63" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(-3032, 1974)
+
+[node name="Tree64" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(4309, -994)
+
+[node name="Tree65" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(3206, -446)
+
+[node name="Tree66" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(2747, -542)
+
+[node name="Tree67" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(-1841, 42)
+
+[node name="Tree68" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(-1663, -994)
+
+[node name="Tree69" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(-1597, -927)
+
+[node name="Tree70" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(-1730, -942)
+
+[node name="Tree71" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(-1545, -883)
+
+[node name="Tree72" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(-1500, -801)
+
+[node name="Tree73" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(-1552, -712)
+
+[node name="Tree74" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(-1811, -890)
+
+[node name="Tree75" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(-1611, -624)
+
+[node name="Tree76" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(-2855, -165)
+
+[node name="Tree77" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(3406, 412)
+
+[node name="Tree78" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(2903, -9)
+
+[node name="Tree79" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(2429, 1715)
+
+[node name="Tree80" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(-1944, 1789)
+
+[node name="Tree81" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(2673, 494)
+
+[node name="Tree82" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(2733, 597)
+
+[node name="Tree83" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(2807, 649)
+
+[node name="Tree84" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(2873, 731)
+
+[node name="Tree85" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(2836, 842)
+
+[node name="Tree86" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(2770, 967)
+
+[node name="Tree87" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(2725, 1071)
+
+[node name="Tree88" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(-664, 1315)
+
+[node name="Tree89" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(3502, 1160)
+
+[node name="Tree90" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(4035, 1707)
+
+[node name="Tree91" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(4227, 753)
+
+[node name="Tree92" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(406, -3803)
+
+[node name="Tree93" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(-8582, 3164)
+
+[node name="Tree94" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(-6259, -2851)
+
+[node name="Tree95" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(6445, 3954)
+
+[node name="Tree96" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(9348, 633)
+
+[node name="Tree97" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(7002, -2828)
+
+[node name="Tree98" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(-5098, 4906)
+
+[node name="Tree99" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(2636, -2596)
+
+[node name="Tree100" parent="." instance=ExtResource("2_33cqm")]
+position = Vector2(-476, 4023)
+
+[connection signal="health_depleted" from="player" to="." method="_on_player_health_depleted"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

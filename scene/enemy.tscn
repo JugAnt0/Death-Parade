@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://nbuevuablnx"]
+
+[ext_resource type="Script" uid="uid://6eqas0gftbjm" path="res://script/enemy.gd" id="1_f87vc"]
+[ext_resource type="PackedScene" uid="uid://ogik4s70pgwl" path="res://sprites/characters/slime/slime.tscn" id="1_h08p8"]
+[ext_resource type="PackedScene" uid="uid://dhmhmrth6rdce" path="res://sprites/smoke_explosion/smoke_explosion.tscn" id="3_8u16h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f87vc"]
+radius = 50.0
+
+[node name="enemy" type="CharacterBody2D"]
+collision_layer = 2
+platform_floor_layers = 4294967040
+script = ExtResource("1_f87vc")
+
+[node name="Slime" parent="." instance=ExtResource("1_h08p8")]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -27)
+shape = SubResource("CircleShape2D_f87vc")
+
+[node name="SmokeExplosion" parent="." instance=ExtResource("3_8u16h")]
